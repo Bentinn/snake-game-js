@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <input type="button">
+   
 <body onKeyDown="pegadirecao(event.keyCode);">
 
 <h2 align="center">Bento Alves</h2>
@@ -51,15 +51,6 @@
         if(tecla==40)direcao=3;
     }
     
-    function reiniciarJogo(){
-        document.getElementById('principal').innerHTML=tabuleiro+"</table>";
-        cobra=[[5,5]];
-        direcao=2;
-        mx=parseInt(Math.random()*10);
-        my=parseInt(Math.random()*10);
-        vivo=true;
-        anda();
-    }
 </script>
 </body>
 </html>
