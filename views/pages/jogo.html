@@ -3,7 +3,7 @@
    
 <body onKeyDown="pegadirecao(event.keyCode);">
 
-<h2 align="center">Bento Alves</h2>
+<h2 align="center">Sanke game Bento Alves</h2>
 
 <div id=principal></div>
 <script>
@@ -29,9 +29,7 @@
         my = parseInt(Math.random() * 10);
         vivo = true
     }
-    if(vivo == false){
-        reiniciarJogo()
-    }
+
     function anda(){
         document.getElementById('td'+cobra[cobra.length-1][0]+'_'+cobra[cobra.length-1][1]).style.background="#ffffff";
         if(mx==cobra[cobra.length-1][0]&&my==cobra[cobra.length-1][1]){
