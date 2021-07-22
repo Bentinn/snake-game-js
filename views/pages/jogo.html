@@ -20,6 +20,16 @@
     mx=parseInt(Math.random()*10);
     my=parseInt(Math.random()*10);
     vivo=true;
+    
+    function reiniciarJogo(){
+        document.getElementById('principal').innerHTML = tabuleiro + "</table>";
+        cobra = [[5, 0]];
+        direcao = 2;
+        mx = parseInt(Math.random() * 10);  
+        my = parseInt(Math.random() * 10);
+        vivo = true
+    }
+    
     function anda(){
         document.getElementById('td'+cobra[cobra.length-1][0]+'_'+cobra[cobra.length-1][1]).style.background="#ffffff";
         if(mx==cobra[cobra.length-1][0]&&my==cobra[cobra.length-1][1]){
@@ -43,6 +53,8 @@
         else alert('Fim de jogo');
     }
     anda();
+    
+    
     function pegadirecao(tecla){
         /*alert(tecla);*/
         if(tecla==37)direcao=0;
