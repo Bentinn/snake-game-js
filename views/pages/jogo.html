@@ -27,9 +27,11 @@
         direcao = 2;
         mx = parseInt(Math.random() * 10);  
         my = parseInt(Math.random() * 10);
-        vivo = false
+        vivo = true
     }
-    
+    if(vivo == false){
+        reiniciarJogo()
+    }
     function anda(){
         document.getElementById('td'+cobra[cobra.length-1][0]+'_'+cobra[cobra.length-1][1]).style.background="#ffffff";
         if(mx==cobra[cobra.length-1][0]&&my==cobra[cobra.length-1][1]){
