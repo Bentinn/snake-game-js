@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html>
-   
 <body onKeyDown="pegadirecao(event.keyCode);">
+    
+    <form action"">
+        <button reiniciarJogo()="reiniciarJogo">Reiniciar</button>
+    </form>
+    
+    <style>
+        
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: x-large;
+        }
 
-<h2 align="center">Snake game Bento Alves</h2>
+        button{
+            background-color: rgb(255, 201, 25);
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+    </style>
+
+<h2 align="center">Bento Alves</h2>
+<h2 align="center" pontuacao()>teste</h2>
 
 <div id=principal></div>
 <script>
+    
     tabuleiro="<table align=center border=1>";
     for(x=0;x<10;x++){
         tabuleiro+="<tr>";
@@ -15,20 +37,20 @@
         tabuleiro+="</tr>";
     }
     document.getElementById('principal').innerHTML=tabuleiro+"</table>";
-    cobra=[[5,0]];
+    cobra=[[5,5]];
     direcao=2;
     mx=parseInt(Math.random()*10);
     my=parseInt(Math.random()*10);
     vivo=true;
-    
-    function reiniciarJogo(){
-        document.getElementById('principal').innerHTML = tabuleiro + "</table>";
-        cobra = [[5, 0]];
-        direcao = 2;
-        mx = parseInt(Math.random() * 10);  
-        my = parseInt(Math.random() * 10);
-        vivo = true
-    }
+
+    function reiniciarJogo() {
+            document.getElementById('principal').innerHTML = tabuleiro + "</table>";
+            cobra = [[5, 0]];
+            direcao = 2;
+            mx = parseInt(Math.random() * 10);
+            my = parseInt(Math.random() * 10);
+            vivo = true;
+        }
 
     function anda(){
         document.getElementById('td'+cobra[cobra.length-1][0]+'_'+cobra[cobra.length-1][1]).style.background="#ffffff";
@@ -49,12 +71,12 @@
         if(cobra[0][0]<0||cobra[0][1]<0||cobra[0][0]>9||cobra[0][1]>9)vivo=false;
         document.getElementById('td'+cobra[0][0]+'_'+cobra[0][1]).style.background="#333333";
         document.getElementById('td'+mx+'_'+my).style.background="#ff3333";
-        if(vivo)setTimeout('anda()',300);
+        if(vivo)setTimeout('anda()',200); /*linha onde aumenta a velocidade*/
         else alert('Fim de jogo');
+
     }
     anda();
-    
-    
+
     function pegadirecao(tecla){
         /*alert(tecla);*/
         if(tecla==37)direcao=0;
@@ -62,6 +84,8 @@
         if(tecla==39)direcao=2;
         if(tecla==40)direcao=3;
     }
+
+
 </script>
 </body>
 </html>
